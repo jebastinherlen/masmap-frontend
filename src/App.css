@@ -1,0 +1,100 @@
+/* ------------------------------
+   GLOBAL RESET & BASE STYLES
+------------------------------ */
+.App {
+  text-align: center;
+}
+
+/* Remove CRA unwanted logo animation */
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: none !important;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+/* ------------------------------
+   PRODUCT CARD ANIMATIONS
+------------------------------ */
+.product-card {
+  transition: all 0.35s ease;
+  transform: translateY(0);
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.20) !important;
+}
+
+/* Image Zoom Effect */
+.product-card img {
+  transition: transform 0.35s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.08);
+}
+
+/* ------------------------------
+   DASHBOARD CARD ANIMATION
+------------------------------ */
+.dashboard-card {
+  transition: all 0.35s ease;
+  transform: translateY(0);
+  cursor: pointer;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18) !important;
+}
+
+.dashboard-card:hover svg {
+  transform: scale(1.15);
+  transition: 0.3s;
+}
+
+/* ------------------------------
+   TABLE HOVER (Latest Users)
+------------------------------ */
+.table-hover tbody tr:hover {
+  background-color: #f8f9fa !important;
+  transition: 0.25s ease;
+}
+
+/* Smooth fade modal backdrop */
+.modal.fade.show {
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* ------------------------------
+   OPTIONAL: BUTTON HOVER EFFECTS
+------------------------------ */
+.btn:hover {
+  transform: translateY(-2px);
+  transition: all 0.25s ease;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}

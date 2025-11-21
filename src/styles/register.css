@@ -1,0 +1,15 @@
+.reg-page{
+    background-image: url("../assets/reg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+
+  /* Optional overlay for better contrast */
+  background-color: rgba(0, 0, 0, 0.6);
+  background-blend-mode: overlay;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

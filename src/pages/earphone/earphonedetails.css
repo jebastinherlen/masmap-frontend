@@ -1,0 +1,44 @@
+.product-details {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  align-items: flex-start;
+}
+
+.product-details img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.details {
+  flex: 1;
+}
+
+.details h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.details p {
+  color: #555;
+  line-height: 1.5;
+}
+
+.details h3 {
+  color: #222;
+  margin-top: 1rem;
+}
+
+button {
+  background-color: #111;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #333;
+}

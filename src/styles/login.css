@@ -1,0 +1,25 @@
+.login-page{
+    background-image: url("../assets/log-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+
+  /* Optional overlay for better contrast */
+  background-color: rgba(0, 0, 0, 0.6);
+  background-blend-mode: overlay;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-group{
+  background-image: url("../assets/login.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  padding: 20px;
+  color: #fff;
+  position: relative;
+}
