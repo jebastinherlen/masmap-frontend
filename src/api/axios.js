@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:5000/api",
-  headers:{"Content-Type":"application/json",},
+  baseURL: "https://masmap.vercel.app/api",   // ✔ Correct API URL
+  headers: { "Content-Type": "application/json" },
 });
 
 // Attach token automatically
