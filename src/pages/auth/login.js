@@ -75,6 +75,11 @@ const Login = () => {
           <br />
           <div>
             <button className="btn btn-success w-100">Login</button>
+             <div className="text-end mt-2">
+                <Link to="/forgot-password" className="text-decoration-none">
+                   Forgot Password?
+                </Link>
+            </div>
             <br />
             <div className="d-flex  align-items-center">
               <p className="mt-3">New User?</p>

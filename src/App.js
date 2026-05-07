@@ -3,6 +3,8 @@ import Home from "./pages/home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/navbar";
 import Login from "./pages/auth/login";
+import ForgotPassword from "./pages/auth/forgotpassword";
+import ResetPassword from "./pages/auth/resetpassword";
 import Register from "./pages/auth/register";
 import ProductList from "./pages/productlist";
 import ProductDetails from "./pages/earphone/earphonedetails";
@@ -33,6 +35,8 @@ function App() {
                   <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/login" element={<Login />} />
+                    <Route path="forgot-password" element={<ForgotPassword/>}/>
+                    <Route path="reset-password/:token" element={<ResetPassword/>}/>
                     <Route path="/register" element={<Register />} />
                     <Route path="/product" element={<ProductList />} />
                     <Route path="/product/:id" element={<ProductDetails />} />
