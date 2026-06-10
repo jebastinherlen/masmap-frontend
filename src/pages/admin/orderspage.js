@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import axios from "../../api/axios";
 
 function OrdersPage() {
@@ -10,22 +10,23 @@ function OrdersPage() {
 
   const token = localStorage.getItem("token");
 
-  const loadOrders = async () => {
+  const loadOrders = useCallback(async () => {
     try {
       const res = await axios.get("/orders/all", {
-        headers: { Authorization: `Bearer ${token}` },
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       });
 
       setOrders(res.data);
     } catch (err) {
       console.error("Failed to load orders", err);
     }
-  };
+  }, [token]);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     loadOrders();
-  }, []);
+  }, [loadOrders]);
 
   const showSuccessPopup = (msg) => {
     setPopupMessage(msg);
@@ -51,7 +52,7 @@ function OrdersPage() {
       );
 
       showSuccessPopup("Payment Status Updated Successfully!");
-      loadOrders();
+      await loadOrders();
     } catch (err) {
       showSuccessPopup("Failed to update payment status");
       console.error(err);
