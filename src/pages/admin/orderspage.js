@@ -25,7 +25,7 @@ function OrdersPage() {
 
   useEffect(() => {
     loadOrders();
-  }, []);
+  }, [loadOrders]);
 
   // Popup show function
   const showSuccessPopup = (msg) => {
