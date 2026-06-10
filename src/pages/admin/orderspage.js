@@ -5,29 +5,28 @@ function OrdersPage() {
   const [orders, setOrders] = useState([]);
   const [loadingId, setLoadingId] = useState(null);
 
-  // Popup state
   const [popupMessage, setPopupMessage] = useState("");
   const [showPopup, setShowPopup] = useState(false);
 
   const token = localStorage.getItem("token");
 
-  // Load Orders
   const loadOrders = async () => {
     try {
       const res = await axios.get("/orders/all", {
         headers: { Authorization: `Bearer ${token}` },
       });
+
       setOrders(res.data);
     } catch (err) {
       console.error("Failed to load orders", err);
     }
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     loadOrders();
-  }, [loadOrders]);
+  }, []);
 
-  // Popup show function
   const showSuccessPopup = (msg) => {
     setPopupMessage(msg);
     setShowPopup(true);
@@ -37,7 +36,6 @@ function OrdersPage() {
     }, 1800);
   };
 
-  // Update Payment Status
   const updatePaymentStatus = async (id, paymentStatus) => {
     try {
       setLoadingId(id);
@@ -46,7 +44,9 @@ function OrdersPage() {
         `/orders/${id}/paymentstatus`,
         { paymentStatus },
         {
-          headers: { Authorization: `Bearer ${token}` },
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         }
       );
 
@@ -85,7 +85,7 @@ function OrdersPage() {
                 <td>
                   <select
                     className="form-select"
-                    defaultValue={o.paymentStatus}
+                    value={o.paymentStatus}
                     disabled={loadingId === o._id}
                     onChange={(e) =>
                       updatePaymentStatus(o._id, e.target.value)
@@ -102,7 +102,6 @@ function OrdersPage() {
         </table>
       </div>
 
-      {/* Smooth Bottom Popup */}
       {showPopup && (
         <div
           style={{
@@ -110,12 +109,11 @@ function OrdersPage() {
             bottom: "25px",
             right: "25px",
             background: "#28a745",
-            color: "white",
+            color: "#fff",
             padding: "12px 20px",
             borderRadius: "8px",
             boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
             zIndex: 9999,
-            transition: "0.3s",
             fontWeight: "500",
           }}
         >
