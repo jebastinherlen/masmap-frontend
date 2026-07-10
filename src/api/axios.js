@@ -1,8 +1,10 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://188.34.166.115:5000/api",   // ✔ Correct API URL
-  headers: { "Content-Type": "application/json" },
+  baseURL: "https://masmap.devreal.ai/api",
+  headers: {
+    "Content-Type": "application/json",
+  },
 });
 
 // Attach token automatically
@@ -18,7 +20,7 @@ api.interceptors.request.use(
 
     return config;
   },
-  (error) => Promise.reject(error)
+  (error) => Promise.reject(error),
 );
 
 export default api;
