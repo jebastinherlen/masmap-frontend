@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://masmap.devreal.ai/api",
+  baseURL: "http://188.34.166.115/api",
   headers: {
     "Content-Type": "application/json",
   },
